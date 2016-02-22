@@ -10,7 +10,7 @@ Please use the following command line to run the script:
 	
 * The output file will be in the same folder as the input file. 
 * The name for the output file will have a prefix "out_". 
-If there already exist a file with the same name as "out_text_file.txt", the script will automatically expend one more "out\_" prefix in front of the name. So no file will be overwritten.
+* The script will automatically expand one more "out_" prefix to avoid overwrite other text file with the same file name.
 
 ====
 #### 简介
@@ -20,4 +20,6 @@ If there already exist a file with the same name as "out_text_file.txt", the scr
 	
 	python GB2312ToUTF8.py path/to/input/text_file.txt
 	
-输出文件与输入文件在同一文件夹中，输出文件名将包含"out_"前缀，以此与输入文件区分开。
+* 输出文件与输入文件在同一文件夹中.
+* 输出文件名将包含"out_"前缀，以此与输入文件区分开。
+* 如若文件夹内已包含一含"out\_"前缀文件名的文件，该脚本会通过多增添一个"out\_"前缀的方式，避免覆盖原有文件。
