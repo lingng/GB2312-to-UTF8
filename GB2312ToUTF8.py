@@ -37,6 +37,4 @@ def main(argv):
 
 
 if __name__ == '__main__':
-    print ("This python script allows you to transfer a GB2312 encoded text file to UTF-8 encoded text file. The output file will be stored in the same folder with the input file, with a prefix of \"out_\". Please use the following format to run the script: \npython GB2312ToUTF8.py path/to/input/text_file.txt")
-    print ("===============================================")
     main(sys.argv)
