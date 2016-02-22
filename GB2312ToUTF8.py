@@ -1,6 +1,9 @@
 """
 Input: Document with GB2312 encoding
 Output: Document with UTF-8 encoding
+
+Written by: Liz ZHANG
+Date: 02/21/2016
 """
 
 # !/usr/bin/python
@@ -8,10 +11,10 @@ Output: Document with UTF-8 encoding
 import sys
 import os
 
+
 def change_encode(fin):
     # Get input file name fron the input path
     filename = fin.split('/')[-1]
-
     # Get the position for the last occurance of '/' to split the path and the filename
     position = fin.rfind('/')
     if position < 0:
@@ -22,12 +25,12 @@ def change_encode(fin):
 
     # Expand "out_" prefix to the filename for the out file
     fout = "out_"+filename
-    while (os.path.isfile(path+'/'+fout)):
+    while os.path.isfile(path+'/'+fout):
         # Make sure to have one more "out_" prefix for the out file, so that no file will be overwritten
         fout = "out_"+fout
 
     # If the input file does not exist
-    if (not os.path.isfile(fin)):
+    if not os.path.isfile(fin):
         print "Error: No such file!"
         sys.exit(2)
 
@@ -44,14 +47,11 @@ def main(argv):
     if len(argv) != 2:
         print("Error: Wrong argument number.")
         sys.exit(2)
-
     fin = argv[1]
-
     # Not txt file
     if not fin.endswith('.txt'):
         print("Error: Please choose a txt file. Format: python GB2312ToUTF8.py path/to/input/text_file.txt")
         sys.exit(2)
-
     change_encode(fin)
 
 
